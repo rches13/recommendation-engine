@@ -96,6 +96,23 @@ curl http://localhost:8000/users/a1b2c3d4/recommendations
 
 ---
 
+## Frontend
+
+A React demo UI lives in `frontend/`. It lets you create a user, rate courses, and watch recommendations update in real time.
+
+```bash
+# Start the API first
+uvicorn app.main:app --reload
+
+# In a second terminal
+cd frontend
+npm install
+npm run dev
+# → http://localhost:5173
+```
+
+---
+
 ## Running tests
 
 ```bash
@@ -124,6 +141,17 @@ recommendation-engine/
 │       └── schemas.py       # Pydantic request/response models
 ├── tests/
 │   └── test_recommendations.py
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   ├── index.css
+│   │   └── components/
+│   │       ├── CourseCard.jsx
+│   │       ├── RecommendationList.jsx
+│   │       ├── StarRating.jsx
+│   │       └── UserSetup.jsx
+│   └── package.json
 ├── Dockerfile
 ├── requirements.txt
 └── requirements-dev.txt
